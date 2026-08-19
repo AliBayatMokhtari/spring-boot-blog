@@ -11,7 +11,6 @@ import com.example.blog.repository.UserRepository;
 @RequiredArgsConstructor
 @Slf4j
 public class UserService {
-
     private final UserRepository userRepository;
 
     public List<UserResponse> allUsers() {
