@@ -55,4 +55,32 @@ public class Post {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
+        comment.setPost(this);
+    }
+
+    public void removeComment(Comment comment) {
+        comments.remove(comment);
+        comment.setPost(null);
+    }
+
+    public void addLike(Like like) {
+        likes.add(like);
+        like.setPost(this);
+    }
+
+    public void removeLike(Like like) {
+        likes.remove(like);
+        like.setPost(null);
+    }
+
+    public int getLikeCount() {
+        return likes != null ? likes.size() : 0;
+    }
+
+    public int getCommentCount() {
+        return comments != null ? comments.size() : 0;
+    }
 }
