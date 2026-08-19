@@ -21,5 +21,4 @@ public class UserService {
 
         return list.stream().map(item -> new UserResponse(item.getName(), item.getEmail())).toList();
     }
-
 }

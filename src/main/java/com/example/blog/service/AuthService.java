@@ -71,5 +71,4 @@ public class AuthService {
                 user.getName(),
                 user.getEmail());
     }
-
 }
